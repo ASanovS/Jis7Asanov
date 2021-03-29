@@ -1,5 +1,5 @@
 package lesson2.level1;
-
+//**********@Checked***************//
 public class MathOperationsDemo {
 
 
