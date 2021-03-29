@@ -1,7 +1,7 @@
 package run;
 
-import lesson2.level1.MathOperationsDemo;
-import lesson2.level2.RandomGeneratorDemo;
+import lecture1.level1.MathOperationsDemo;
+import lecture1.level2.RandomGeneratorDemo;
 
 public class Application {
 
