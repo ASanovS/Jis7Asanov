@@ -1,4 +1,4 @@
-package lesson2.level1;
+package lecture1.level1;
 
 public class MathOperationsDemo {
 
