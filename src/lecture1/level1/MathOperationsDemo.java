@@ -2,7 +2,6 @@ package lecture1.level1;
 
 public class MathOperationsDemo {
 
-
     public int addition(int a, int b) {
         return a + b;
     }
