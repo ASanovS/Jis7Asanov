@@ -6,6 +6,7 @@ public class EncoderDemo {
         Encoder encoder = new Encoder();
 
         encoder.encode((short) 65);
+        encoder.decode('X');
 
     }
 }
