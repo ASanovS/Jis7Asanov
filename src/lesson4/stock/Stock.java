@@ -1,18 +1,5 @@
 package lesson4.stock;
 
-/*
-TODO: Класс Stock должен обладать следующими характеристиками:
-    Свойства
-        Имя компании
-        Текущая стоимость
-        Минимальная стоимость
-        Максимальная стоимость
-    Методы
-        Обновить текущую стоимость акции updatePrice()
-        Распечатать информацию об акции printInformation()
-    Имя компании и начальную стоимость необходимо задавать в момент создания акции.
-    Текущая, минимальная и максимальная стоимость должны меняться только через метод updatePrice().
- */
 public class Stock {
     private final String name;
     private int currentPrice;
@@ -31,13 +18,13 @@ public class Stock {
         currentPrice = newPrice;
         if (maxPrice < newPrice) {
             maxPrice = newPrice;
-        } else {
+        } else if (minPrice > newPrice){
             minPrice = newPrice;
         }
     }
 
     public void printInformation() {
-        System.out.printf("Company = \"%s\", Current Price = %s, Min Price = %s, Max Price = %s",
+        System.out.printf("Company = \"%s\", Current Price = %s, Min Price = %s, Max Price = %s \n",
                 name, currentPrice,minPrice, maxPrice);
     }
 }
