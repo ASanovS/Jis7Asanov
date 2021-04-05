@@ -1,5 +1,5 @@
 package lesson4.lightColorDetector;
-
+//*********Checked**************
 public class LightColorDetector {
 
     public String detect(int wavelength) {
