@@ -1,5 +1,5 @@
 package lecture1.level2;
-
+//*****************Checked****************
 import java.util.Random;
 
 public class RandomGeneratorDemo {
