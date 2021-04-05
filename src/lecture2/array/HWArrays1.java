@@ -1,5 +1,5 @@
 package lecture2.array;
-
+//*****************Checked****************
 import java.util.Arrays;
 import java.util.Random;
 
