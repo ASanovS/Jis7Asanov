@@ -1,5 +1,5 @@
 package lesson3.circle;
-
+//*********Checked**************
 public class Circle {
     private double radius;
 
