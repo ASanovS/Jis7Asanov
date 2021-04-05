@@ -1,5 +1,5 @@
 package lesson3.encoder;
-
+//*********Checked**************
 public class Encoder {
 
     public void encode(short code){
