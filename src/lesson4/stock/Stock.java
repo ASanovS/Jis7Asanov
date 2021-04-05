@@ -13,25 +13,17 @@ public class Stock {
         this.minPrice = price;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getCurrentPrice() {
-        return currentPrice;
-    }
-
     public void updatePrice(int newPrice) {
         currentPrice = newPrice;
         if (maxPrice < newPrice) {
             maxPrice = newPrice;
-        } else if (minPrice > newPrice){
+        } else if (minPrice > newPrice) {
             minPrice = newPrice;
         }
     }
 
     public void printInformation() {
         System.out.printf("Company = \"%s\", Current Price = %s, Min Price = %s, Max Price = %s \n",
-                name, currentPrice,minPrice, maxPrice);
+                name, currentPrice, minPrice, maxPrice);
     }
 }
