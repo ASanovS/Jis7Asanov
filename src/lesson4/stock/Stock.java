@@ -13,6 +13,13 @@ public class Stock {
         this.minPrice = price;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getCurrentPrice() {
+        return currentPrice;
+    }
 
     public void updatePrice(int newPrice) {
         currentPrice = newPrice;
