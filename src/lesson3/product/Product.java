@@ -1,5 +1,5 @@
 package lesson3.product;
-
+//*********Checked**************
 public class Product {
 
     private final String name;
