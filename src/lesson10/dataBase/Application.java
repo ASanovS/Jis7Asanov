@@ -14,10 +14,20 @@ public class Application {
         bookRepository.save(b3);
         bookRepository.save(b4);
 
+        System.out.println("********************===********************");
         for (Book book : bookRepository.findAll()) {
             System.out.printf("%s \n", book);
         }
 
-        System.out.println(bookRepository.findById("1"));
+        System.out.println("********************===********************");
+        System.out.println(bookRepository.findById("3"));
+        //System.out.println(bookRepository.findById("5")); => this return exception
+
+        System.out.println("********************===********************");
+        bookRepository.delete("3");
+        for (Book book : bookRepository.findAll()) {
+            System.out.printf("%s \n", book);
+        }
+        //bookRepository.delete("5"); => this return exception
     }
 }

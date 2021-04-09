@@ -16,10 +16,8 @@ public class BookRepository implements Repository<Book> {
 
     @Override
     public Book findById(String id) throws ItemNotFoundException {
-        for (String s : bookRepository.keySet()) {
-            if (!s.equals(id)) {
-                exception.itemNotFoundException();
-            }
+        if (bookRepository.get(id) == null) {
+           exception.itemNotFoundException();
         }
         return bookRepository.get(id);
     }
@@ -31,12 +29,9 @@ public class BookRepository implements Repository<Book> {
 
     @Override
     public void delete(String id) throws ItemNotFoundException {
-        for (String s : bookRepository.keySet()) {
-            if (!s.equals(id)) {
-                exception.itemNotFoundException();
-            } else {
-                bookRepository.remove(id);
-            }
+        if (bookRepository.get(id) == null) {
+            exception.itemNotFoundException();
         }
+        bookRepository.remove(id);
     }
 }
