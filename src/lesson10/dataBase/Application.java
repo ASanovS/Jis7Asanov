@@ -21,13 +21,11 @@ public class Application {
 
         System.out.println("********************===********************");
         System.out.println(bookRepository.findById("3"));
-        //System.out.println(bookRepository.findById("5")); => this return exception
 
         System.out.println("********************===********************");
         bookRepository.delete("3");
         for (Book book : bookRepository.findAll()) {
             System.out.printf("%s \n", book);
         }
-        //bookRepository.delete("5"); => this return exception
     }
 }
