@@ -36,9 +36,8 @@ public class Tv {
         return onOrOfTv;
     }
 
-    public boolean setOnOrOfTv(boolean onOrOfTv) {
+    public void setOnOrOfTv(boolean onOrOfTv) {
         this.onOrOfTv = onOrOfTv;
-        return onOrOfTv;
     }
 
     @Override

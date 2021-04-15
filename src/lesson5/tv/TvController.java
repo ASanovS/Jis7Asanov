@@ -1,28 +1,11 @@
-package lesson5.tv.service;
+package lesson5.tv;
 
-import lesson5.tv.Tv;
-
-public class ServiceTv {
-
-    /*TODO:
-       Переключать каналы и менять громкость можно только у включенного телевизора.
-
-       TODO:
-        Для каждого из полей написать вспомогательные методы getter (напр. int getCurrentChannel()).
-        Необходимо переопределить методы equals() и toString().
-
-        TODO:Нефункциональные требования:
-            Продемонстрировать работу всех методов, включая переопределенные в демонстрационном классе TvDemo.
-
-        TODO:
-         Опционально: Написать тестовые сценарии для класса Tv в классе TvTest. Все тестовые сценарии должны отрабатывать без ошибок.
-     */
+public class TvController {
 
     private final int FIRST_CHANNEL = 1;
     private final int LAST_CHANNEL = 30;
     private final int MIN_LEVEL_SOUND = 0;
     private final int MAX_LEVEL_SOUND = 100;
-
 
     private int switchToTheNextChannel(Tv tv) {
         tv.setCurrentChannel(+1);
@@ -68,5 +51,11 @@ public class ServiceTv {
             tv.setOnOrOfTv(false);
         }
         return tv.isOnOrOfTv();
+    }
+
+    private void alertOfTv(Tv tv) {
+        if (tv.isOnOrOfTv()) {
+            System.out.println("Tv off.Use turnOnTv");
+        }
     }
 }
