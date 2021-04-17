@@ -1,11 +1,63 @@
 package lesson5.tv;
 
+import java.util.Scanner;
+
 public class TvController {
 
     private final int FIRST_CHANNEL = 1;
     private final int LAST_CHANNEL = 30;
     private final int MIN_LEVEL_SOUND = 0;
     private final int MAX_LEVEL_SOUND = 100;
+
+    public void remoteController(Tv tv) {
+        System.out.println("Remote controller tv:\n" +
+                "1 - On tv\n" +
+                "2 - Of tv\n" +
+                "3 - Next channel\n" +
+                "4 - Previous channel\n" +
+                "5 - Increase sound\n" +
+                "6 - Decrease sound\n");
+        do {
+            int menu = scanner().nextInt();
+            switch (menu) {
+                case 1:
+                    System.out.println("Tv on = " + turnOnTv(tv));
+                    break;
+                case 2:
+                    System.out.println("Tv of = " + turnOfTv(tv));
+                    break;
+                case 3:
+                    if (validateOnTv(tv)) break;
+                    System.out.println("Tv channel increase = " + switchToTheNextChannel(tv));
+                    break;
+                case 4:
+                    if (validateOnTv(tv)) break;
+                    System.out.println("Tv channel decrease = " + switchToThePreviousChannel(tv));
+                    break;
+                case 5:
+                    if (validateOnTv(tv)) break;
+                    System.out.println("Sound tv increase = " + increaseSound(tv));
+                    break;
+                case 6:
+                    if (validateOnTv(tv)) break;
+                    System.out.println("Sound tv decrease = " + decreaseSound(tv));
+                    break;
+            }
+        } while (!validateOnTv(tv));
+    }
+
+    private boolean validateOnTv(Tv tv) {
+        if (!tv.isOnOrOfTv()) {
+            System.out.println("Tv off.Use turnOnTv");
+            return true;
+        }
+        return false;
+    }
+
+    private Scanner scanner() {
+        return new Scanner(System.in);
+    }
+
 
     private int switchToTheNextChannel(Tv tv) {
         tv.setCurrentChannel(+1);
@@ -51,11 +103,5 @@ public class TvController {
             tv.setOnOrOfTv(false);
         }
         return tv.isOnOrOfTv();
-    }
-
-    private void alertOfTv(Tv tv) {
-        if (tv.isOnOrOfTv()) {
-            System.out.println("Tv off.Use turnOnTv");
-        }
     }
 }
