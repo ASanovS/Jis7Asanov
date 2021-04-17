@@ -25,6 +25,7 @@ public class TvController {
                     break;
                 case 2:
                     System.out.println("Tv of = " + turnOfTv(tv));
+                    scanner().close();
                     break;
                 case 3:
                     if (validateOnTv(tv)) break;
@@ -60,7 +61,7 @@ public class TvController {
 
 
     private int switchToTheNextChannel(Tv tv) {
-        tv.setCurrentChannel(+1);
+        tv.setCurrentChannel(tv.getCurrentChannel() + 1);
         if (tv.getCurrentChannel() > LAST_CHANNEL) {
             tv.setCurrentChannel(FIRST_CHANNEL);
         }
@@ -68,7 +69,7 @@ public class TvController {
     }
 
     private int switchToThePreviousChannel(Tv tv) {
-        tv.setCurrentChannel(-1);
+        tv.setCurrentChannel(tv.getCurrentChannel() - 1);
         if (tv.getCurrentChannel() < FIRST_CHANNEL) {
             tv.setCurrentChannel(LAST_CHANNEL);
         }
@@ -76,17 +77,19 @@ public class TvController {
     }
 
     private int increaseSound(Tv tv) {
-        tv.setCurrentSound(+1);
+        tv.setCurrentSound(tv.getCurrentSound() + 1);
         if (tv.getCurrentSound() > 100) {
-            tv.setCurrentChannel(MAX_LEVEL_SOUND);
+            tv.setCurrentSound(MAX_LEVEL_SOUND);
+            return MAX_LEVEL_SOUND;
         }
         return tv.getCurrentSound();
     }
 
     private int decreaseSound(Tv tv) {
-        tv.setCurrentSound(-1);
+        tv.setCurrentSound(tv.getCurrentSound() - 1);
         if (tv.getCurrentSound() < 0) {
             tv.setCurrentSound(MIN_LEVEL_SOUND);
+            return MIN_LEVEL_SOUND;
         }
         return tv.getCurrentSound();
     }
