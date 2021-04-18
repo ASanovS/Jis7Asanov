@@ -1,8 +1,9 @@
 package lesson10.exceprions.userValidationService;
 
-public class ValidationUserService {
+public class UserValidator {
 
     private void validateUserFirstName(User user) {
+       if (user.getFirstName() == null) new UserValidationException().exception();
         int lengthUserFirstName = user.getFirstName().length();
         if (lengthUserFirstName < 3 || lengthUserFirstName > 15) {
             new UserValidationException().exception();
@@ -10,6 +11,7 @@ public class ValidationUserService {
     }
 
     private void validateUserLastName(User user) {
+        if (user.getLastName() == null) new UserValidationException().exception();
         int lengthUserLastName = user.getLastName().length();
         if (lengthUserLastName < 3 || lengthUserLastName > 15) {
             new UserValidationException().exception();
@@ -22,7 +24,7 @@ public class ValidationUserService {
         }
     }
 
-    public void validateService(User user) {
+    public void validateUser(User user) {
         validateUserAge(user);
         validateUserFirstName(user);
         validateUserLastName(user);
