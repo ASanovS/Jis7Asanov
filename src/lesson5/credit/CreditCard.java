@@ -3,22 +3,22 @@ package lesson5.credit;
 import java.util.Objects;
 
 public class CreditCard {
-    private long creditCardNumber;
+    private String creditCardNumber;
     private int pinCode;
     private int balance = 0;
     private int creditLimit;
     private int credit = 0;
 
-    public CreditCard(long creditCardNumber, int pinCode) {
+    public CreditCard(String creditCardNumber, int pinCode) {
         this.creditCardNumber = creditCardNumber;
         this.pinCode = pinCode;
     }
 
-    public long getCreditCardNumber() {
+    public String getCreditCardNumber() {
         return creditCardNumber;
     }
 
-    public void setCreditCardNumber(long creditCardNumber) {
+    public void setCreditCardNumber(String creditCardNumber) {
         this.creditCardNumber = creditCardNumber;
     }
 
@@ -59,7 +59,7 @@ public class CreditCard {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CreditCard that = (CreditCard) o;
-        return creditCardNumber == that.creditCardNumber && pinCode == that.pinCode && balance == that.balance && creditLimit == that.creditLimit && credit == that.credit;
+        return pinCode == that.pinCode && balance == that.balance && creditLimit == that.creditLimit && credit == that.credit && Objects.equals(creditCardNumber, that.creditCardNumber);
     }
 
     @Override
