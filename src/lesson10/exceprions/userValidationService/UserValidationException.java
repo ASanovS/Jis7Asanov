@@ -1,8 +1,8 @@
 package lesson10.exceprions.userValidationService;
 
-public class UserValidationException{
+public class UserValidationException extends RuntimeException{
 
-    public void exception() {
-        throw new RuntimeException("Exception: data validation exception, please enter correct data.");
+    UserValidationException(String msg) {
+        super(msg);
     }
 }

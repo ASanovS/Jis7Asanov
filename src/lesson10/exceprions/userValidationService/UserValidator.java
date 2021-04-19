@@ -2,25 +2,29 @@ package lesson10.exceprions.userValidationService;
 
 public class UserValidator {
 
+    private void checkingValueForNull() {
+        throw new UserValidationException("The value cannot be null");
+    }
+
     private void validateUserFirstName(User user) {
-       if (user.getFirstName() == null) new UserValidationException().exception();
+        if (user.getFirstName() == null) checkingValueForNull();
         int lengthUserFirstName = user.getFirstName().length();
         if (lengthUserFirstName < 3 || lengthUserFirstName > 15) {
-            new UserValidationException().exception();
+            throw new UserValidationException("First name exception: enter a name of at least 3 and maximum 15 characters");
         }
     }
 
     private void validateUserLastName(User user) {
-        if (user.getLastName() == null) new UserValidationException().exception();
+        if (user.getLastName() == null) checkingValueForNull();
         int lengthUserLastName = user.getLastName().length();
         if (lengthUserLastName < 3 || lengthUserLastName > 15) {
-            new UserValidationException().exception();
+            throw new UserValidationException("Last name exception: enter a name of at least 3 and maximum 15 characters");
         }
     }
 
     private void validateUserAge(User user) {
         if (user.getAge() < 0 || user.getAge() > 120) {
-            new UserValidationException().exception();
+            throw new UserValidationException("Age exception: please specify a value between 0 and 120");
         }
     }
 
