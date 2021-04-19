@@ -3,10 +3,10 @@ package lesson5.tv;
 import java.util.Objects;
 
 public class Tv {
+    private final String manufacturer;
     private int currentChannel = 1;
     private int currentSound = 0;
-    private final String manufacturer;
-    private boolean onOrOfTv = false;
+    private boolean isEnabled = false;
 
     public Tv(String manufacturer) {
         this.manufacturer = manufacturer;
@@ -32,12 +32,16 @@ public class Tv {
         return manufacturer;
     }
 
-    public boolean isOnOrOfTv() {
-        return onOrOfTv;
+    public boolean isEnabled() {
+        return isEnabled;
     }
 
-    public void setOnOrOfTv(boolean onOrOfTv) {
-        this.onOrOfTv = onOrOfTv;
+    public void disable() {
+        this.isEnabled = false;
+    }
+
+    public void enable() {
+        this.isEnabled = true;
     }
 
     @Override
@@ -45,12 +49,12 @@ public class Tv {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Tv tv = (Tv) o;
-        return currentChannel == tv.currentChannel && currentSound == tv.currentSound && onOrOfTv == tv.onOrOfTv && Objects.equals(manufacturer, tv.manufacturer);
+        return currentChannel == tv.currentChannel && currentSound == tv.currentSound && isEnabled == tv.isEnabled && Objects.equals(manufacturer, tv.manufacturer);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(currentChannel, currentSound, manufacturer, onOrOfTv);
+        return Objects.hash(currentChannel, currentSound, manufacturer, isEnabled);
     }
 
     @Override
@@ -59,7 +63,7 @@ public class Tv {
                 "currentChannel=" + currentChannel +
                 ", currentSound=" + currentSound +
                 ", manufacturer='" + manufacturer + '\'' +
-                ", onOrOfTv=" + onOrOfTv +
+                ", onOrOfTv=" + isEnabled +
                 '}';
     }
 }
