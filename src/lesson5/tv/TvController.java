@@ -34,26 +34,26 @@ public class TvController {
                     scanner().close();
                     break;
                 case 3:
-                    if (validateOnTv()) break;
+                    if (isTvEnabled()) break;
                     System.out.println("Tv channel increase = " + switchToTheNextChannel());
                     break;
                 case 4:
-                    if (validateOnTv()) break;
+                    if (isTvEnabled()) break;
                     System.out.println("Tv channel decrease = " + switchToThePreviousChannel());
                     break;
                 case 5:
-                    if (validateOnTv()) break;
+                    if (isTvEnabled()) break;
                     System.out.println("Sound tv increase = " + increaseSound());
                     break;
                 case 6:
-                    if (validateOnTv()) break;
+                    if (isTvEnabled()) break;
                     System.out.println("Sound tv decrease = " + decreaseSound());
                     break;
             }
-        } while (!validateOnTv());
+        } while (!isTvEnabled());
     }
 
-    private boolean validateOnTv() {
+    private boolean isTvEnabled() {
         if (!tv.isEnabled()) {
             System.out.println("Tv off.Use turnOnTv");
             return true;
@@ -66,18 +66,22 @@ public class TvController {
     }
 
     private int switchToTheNextChannel() {
-        if (tv.getCurrentChannel() > LAST_CHANNEL) {
+        if (tv.getCurrentChannel() == LAST_CHANNEL) {
             tv.setCurrentChannel(FIRST_CHANNEL);
+        } else {
+
+            tv.setCurrentChannel(tv.getCurrentChannel() + 1);
         }
-        tv.setCurrentChannel(tv.getCurrentChannel() + 1);
         return tv.getCurrentChannel();
     }
 
     private int switchToThePreviousChannel() {
-        if (tv.getCurrentChannel() < FIRST_CHANNEL) {
+        if (tv.getCurrentChannel() == FIRST_CHANNEL) {
             tv.setCurrentChannel(LAST_CHANNEL);
+        } else {
+
+            tv.setCurrentChannel(tv.getCurrentChannel() - 1);
         }
-        tv.setCurrentChannel(tv.getCurrentChannel() - 1);
         return tv.getCurrentChannel();
     }
 
