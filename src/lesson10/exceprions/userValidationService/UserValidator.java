@@ -3,11 +3,9 @@ package lesson10.exceprions.userValidationService;
 public class UserValidator {
 
     private void assertUserNotNull(User user) {
-        if (user.getFirstName() == null || user.getLastName() == null) checkingValueForNull();
-    }
-
-    private void checkingValueForNull() {
-        throw new UserValidationException("The value cannot be null");
+        if (user.getFirstName() == null || user.getLastName() == null) {
+            throw new UserValidationException("The value cannot be null");
+        }
     }
 
     private void validateUserFirstName(User user) {
