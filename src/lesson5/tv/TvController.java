@@ -69,7 +69,6 @@ public class TvController {
         if (tv.getCurrentChannel() == LAST_CHANNEL) {
             tv.setCurrentChannel(FIRST_CHANNEL);
         } else {
-
             tv.setCurrentChannel(tv.getCurrentChannel() + 1);
         }
         return tv.getCurrentChannel();
@@ -79,7 +78,6 @@ public class TvController {
         if (tv.getCurrentChannel() == FIRST_CHANNEL) {
             tv.setCurrentChannel(LAST_CHANNEL);
         } else {
-
             tv.setCurrentChannel(tv.getCurrentChannel() - 1);
         }
         return tv.getCurrentChannel();
