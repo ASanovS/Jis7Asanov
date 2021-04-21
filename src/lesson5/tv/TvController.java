@@ -84,20 +84,20 @@ public class TvController {
     }
 
     private int increaseSound() {
-        if (tv.getCurrentSound() > 100) {
+        if (tv.getCurrentSound() == MAX_LEVEL_SOUND) {
             tv.setCurrentSound(MAX_LEVEL_SOUND);
-            return MAX_LEVEL_SOUND;
+        } else {
+            tv.setCurrentSound(tv.getCurrentSound() + 1);
         }
-        tv.setCurrentSound(tv.getCurrentSound() + 1);
         return tv.getCurrentSound();
     }
 
     private int decreaseSound() {
-        if (tv.getCurrentSound() < 0) {
+        if (tv.getCurrentSound() == MIN_LEVEL_SOUND) {
             tv.setCurrentSound(MIN_LEVEL_SOUND);
-            return MIN_LEVEL_SOUND;
+        } else {
+            tv.setCurrentSound(tv.getCurrentSound() - 1);
         }
-        tv.setCurrentSound(tv.getCurrentSound() - 1);
         return tv.getCurrentSound();
     }
 }
