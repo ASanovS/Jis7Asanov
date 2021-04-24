@@ -27,6 +27,7 @@ public class UserValidator {
     }
 
     private void validateUserAge(User user) {
+        assertUserNotNull(user);
         if (user.getAge() < 0 || user.getAge() > 120) {
             throw new UserValidationException("Age exception: please specify a value between 0 and 120");
         }
