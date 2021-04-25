@@ -50,12 +50,12 @@ public class TvController {
                     System.out.println("Sound tv decrease = " + decreaseSound());
                     break;
             }
-        } while (!isTvEnabled());
+        } while (tv.isEnabled());
     }
 
     private boolean isTvEnabled() {
         if (!tv.isEnabled()) {
-            System.out.println("Tv off.Use turnOnTv");
+            System.out.println("Tv off please on tv");
             return true;
         }
         return false;
