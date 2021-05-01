@@ -17,7 +17,6 @@ public class Hospital {
         service.addingToHospitalRepository(10,"THERAPIST", UserType.THERAPIST);
 
 
-
         System.out.println(service.printRepository());
     }
 }
